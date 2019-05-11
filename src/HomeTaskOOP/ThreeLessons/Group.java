@@ -16,6 +16,17 @@ public class Group {
                 System.out.println("Group is full");
                 //Вызов метода с ошибкой
                 overStudent();
+
+                //Вызов метода который выдает ошибку, сдесь мы его ловим обрабатываем
+                // метод объекта искючения e.printStackTrace(); печатает информацию об исключении (текст красным цветом)
+                //После чего програма дальше работает
+/*                try {
+                    overStudent();
+                } catch (MyException e) {
+                    System.out.println("system");
+                    e.printStackTrace();
+                }
+                break;*/
             }
         }
     }

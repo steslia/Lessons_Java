@@ -2,11 +2,19 @@ package HomeTaskOOP.ThreeLessons;
 
 public class MyException extends RuntimeException {
 
-    public MyException (){
-        super();
+    public MyException() {
     }
 
-    public MyException (String s){
-        super(s);
+    public MyException(String message) {
+        super(message);
     }
+
+    public MyException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    public MyException(Throwable cause) {
+        super(cause);
+    }
+
 }

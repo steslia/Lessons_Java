@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class Group {
 
+    //Создаем массив который будет заполнен объектами студент
     private static Student[] groupStudens = new Student[10];
 
     public static void addStudent(Student student) {
@@ -13,11 +14,19 @@ public class Group {
                 break;
             } else if (groupStudens[groupStudens.length - 1] != null) {
                 System.out.println("Group is full");
-                break;
+                //Вызов метода с ошибкой
+                overStudent();
             }
         }
     }
 
+
+    //Метод в котором генерируеться нами созданая ошибка
+    private static void overStudent() throws MyException{
+        throw new MyException("My Exception Run");
+    }
+
+    //Удаляем студентов
     public static void deleteStudent(Student student) {
         for (int i = 0; i < groupStudens.length; i++) {
             if (groupStudens[i] != null) {
@@ -30,12 +39,9 @@ public class Group {
         }
     }
 
-    public static void inputArrayGroup() {
-        System.out.println(Arrays.toString(groupStudens));
-    }
-
 
     void goString() {
+        //Создаем новый масив и заполняем его фамилими студентов
         String[] student = new String[groupStudens.length];
         int calk = 1;
         for (int i = 0; i < groupStudens.length; i++) {
@@ -46,8 +52,10 @@ public class Group {
             }
         }
 
+        //Сортируем фамилии студнтов
         Arrays.sort(student);
 
+        //Выводим отсортированые фамилии
         for (String sortStudent : student) {
             if (sortStudent != "") {
                 System.out.println(sortStudent);

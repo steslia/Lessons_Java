@@ -9,6 +9,7 @@ class Main {
         //Создаем обект
         Test test = new Test();
 
+
         //Вызываем метод объекта, он такой же как и tet(), и делаем вызов методов из других классов
         test.foo(crow);
         test.foo(ostrich);

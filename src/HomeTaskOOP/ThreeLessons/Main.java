@@ -34,7 +34,6 @@ public class Main {
         Group.addStudent(student9);
         Group.addStudent(student9);
 
-
         //Выводим список студентов в алфавитном порядке
         group.goString();
     }

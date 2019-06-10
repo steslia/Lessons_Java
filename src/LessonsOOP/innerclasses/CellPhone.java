@@ -1,6 +1,6 @@
 package LessonsOOP.innerclasses;
 
-public class CellPhone {
+public class CellPhone extends Display{
 
     private String make;
     private String model;

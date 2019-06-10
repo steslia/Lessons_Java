@@ -14,6 +14,7 @@ public class Main {
         car.setSpeed(140);
         car.print();
         car.beep();
+        System.out.println(car.getSize().getSize());
 
         System.out.println();
 

@@ -5,11 +5,8 @@ import java.util.List;
 
 public class ToDoList {
 
-
-
     //Создали список
     private List<String> toDoList = new ArrayList<>();
-
 
     //Метод для добавления элементов в список
     public void addToList(String task) {

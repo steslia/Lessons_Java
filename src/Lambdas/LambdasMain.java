@@ -26,9 +26,13 @@ public class LambdasMain {
 
         //Тоже пример в который мы не передаем никаких параметоров, так как он void
         Thread thread = new Thread(() -> System.out.println("Hello"));
+        thread.start();
 
         //Тут мы создаем екземпяр типа Runnable и сразу переопределяем его метод run
         //Так как интерфейс Runnable функциональный то мы можем использовать его в лямдах
         Runnable runnable = () -> System.out.println("Hello");
+
+        Thread thread1 = new Thread(runnable);
+        thread1.start();
     }
 }

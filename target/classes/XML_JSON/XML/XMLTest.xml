@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Есть два способа как указать описание XML_JSON файла, чтобы в последствии случайно не поменять его -->
+<!-- DTD = Document Type Definition. Это интсрукция по обработке либо валидатор-->
+<!-- XSD = Это тоже валидатор. Это как класс, это схема к определенному XML_JSON. XML_JSON - это уже как конкретный объект-->
+
+<!--Вот так мы описываем DTD к нашему XML_JSON файлу -->
+<!DOCTYPE catalog [
+        <!ELEMENT catalog (book)*>
+        <!ELEMENT book (author|title|genre|price|publish_date)*>
+        <!ELEMENT author (#PCDATA)>
+        <!ELEMENT title (#PCDATA)>
+        <!ELEMENT genre (#PCDATA)>
+        <!ELEMENT price (#PCDATA)>
+        <!ATTLIST price
+                currency CDATA #IMPLIED>
+        <!ELEMENT publish_date (#PCDATA)>
+        ]>
+
+<!--Вот так мы подключаем XSD к нашему XML_JSON файлу -->
+<catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="XMLTest.xsd">
+    <book>
+        <!--
+            Указатели на символы:
+            &lt;  >
+            &gt;  <
+        -->
+        <author>&lt;Gambardella&gt;, Matthew</author>
+        <title>XML_JSON Developer's Guide</title>
+        <genre>Computer</genre>
+        <price>44.95</price>
+        <publish_date>2000-10-01</publish_date>
+    </book>
+    <book>
+        <author>Ralls, Kim</author>
+        <title>Midnight Rain</title>
+        <genre>Fantasy</genre>
+        <price currency="USD">5.95</price>
+        <publish_date>2000-12-16</publish_date>
+    </book>
+
+
+</catalog>

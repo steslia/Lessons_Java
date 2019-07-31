@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="catalog" type="catalogType">
+    <xs:annotation>
+      <xs:documentation><![CDATA[DTD = Document Type Definition. Это интсрукция по обработке либо валидатор<!DOCTYPE catalog [<!ELEMENT catalog (book)*><!ELEMENT book (author|title|genre|price|publish_date)*><!ELEMENT author (#PCDATA)><!ELEMENT title (#PCDATA)><!ELEMENT genre (#PCDATA)><!ELEMENT price (#PCDATA)><!ATTLIST pricecurrency CDATA #IMPLIED><!ELEMENT publish_date (#PCDATA)>]>]]></xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="bookType">
+    <xs:sequence>
+      <xs:element name="author">
+        <xs:annotation>
+          <xs:documentation>Указатели на символы:
+            &amp;lt;  >
+            &amp;gt;  &lt;</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="&lt;Gambardella&gt;, Matthew"/>
+            <xs:enumeration value="Ralls, Kim"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+
+      <!-- Сделали нашу схему короче, и более читабельной, и при этом компактной и более гибкой -->
+      <!-- Теперь в эти теги можем вносить разные значения, а не только те что внесли изначально, и это динамически гибкой -->
+      <xs:element name="title" type="xs:string" />
+      <xs:element name="genre" type="xs:string" />
+
+      <xs:element name="price">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute type="xs:string" name="currency" use="optional"/>
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+
+      <xs:element name="publish_date">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="2000-10-01"/>
+            <xs:enumeration value="2000-12-16"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="priceType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="currency" use="required"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="catalogType">
+    <xs:sequence>
+      <xs:element type="bookType" name="book" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+    <xs1:attribute ref="xs:noNamespaceSchemaLocation" xmlns:xs="https://www.w3.org/2001/XMLSchema-instance" xmlns:xs1="http://www.w3.org/2001/XMLSchema"/>
+  </xs:complexType>
+  <xs:attribute name="noNamespaceSchemaLocation"></xs:attribute>
+</xs:schema>

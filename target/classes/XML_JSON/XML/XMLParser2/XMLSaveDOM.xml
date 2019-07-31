@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog>
+  <book>
+    <author>Bruce Eckel</author>
+    <title>Thinking In Java 4th Edition</title>
+    <price>20</price>
+  </book>
+  <book>
+    <author>Bruce Eckel</author>
+    <title>Thinking In Java 4th Edition</title>
+    <price>20</price>
+  </book>
+</catalog>

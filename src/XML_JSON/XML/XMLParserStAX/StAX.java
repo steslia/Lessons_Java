@@ -9,7 +9,7 @@ import java.io.FileNotFoundException;
 
 public class StAX {
     public static void main(String[] args) throws FileNotFoundException, XMLStreamException {
-        final String FILE_NAME = "C:\\Users\\Sozin\\Desktop\\Clone git repository\\Lessons\\src\\XML_JSON\\XMLParserSAX\\SAX.xml";
+        final String FILE_NAME = "C:\\Users\\Sozin\\Desktop\\Clone git repository\\Lessons\\src\\XML_JSON\\XML\\XMLParserSAX\\SAX.xml";
         XMLInputFactory factory = XMLInputFactory.newInstance();
         XMLStreamReader parse = factory.createXMLStreamReader(new FileInputStream(FILE_NAME));
 

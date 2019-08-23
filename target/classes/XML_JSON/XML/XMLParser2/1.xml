@@ -4,7 +4,7 @@
         <author>Bruce Eckel</author>
         <title>Thinking In Java 4th Edition</title>
         <genre>Computer</genre>
-        <price currency="USA">40</price>
+        <price currency="USA" lol="lol1">40</price>
         <publish_date>2018-02-02</publish_date>
     </book>
     <book>

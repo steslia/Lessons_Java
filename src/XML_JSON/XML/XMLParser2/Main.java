@@ -21,8 +21,8 @@ public class Main {
         DocumentBuilder builder = factory.newDocumentBuilder();
 
         // Парсим объект DocumentBuilder и получаем объект Document
-        Document document = builder.parse("C:\\Users\\Sozin\\Desktop" +
-                "\\Clone git repository\\Lessons\\src\\XML_JSON\\XMLParser2\\1.xml");
+        Document document = builder.parse("C:\\Users\\Sozin\\Desktop\\Clone git repository\\Lessons" +
+                "\\src\\XML_JSON\\XML\\XMLParser2\\1.xml");
 
         // Возвращает объект класса Element, получаем корневой элемент XML_JSON
         Element element = document.getDocumentElement();
@@ -47,6 +47,8 @@ public class Main {
                 System.out.println("Book:");
                 System.out.println("Authors: " + elementNode.getElementsByTagName("author").item(0).getChildNodes().item(0).getNodeValue());
                 System.out.println("Title: " + elementNode.getElementsByTagName("title").item(0).getChildNodes().item(0).getNodeValue());
+                //Получаем атрибут и можем получить как его имя так и содержимое внутри атрибута
+                System.out.println("Price: " + elementNode.getElementsByTagName("price").item(0).getAttributes().item(0).getNodeValue());
             }
         }
     }

@@ -21,7 +21,6 @@ public class SAX {
             }
 
 
-
             @Override
             public void characters(char[] ch, int start, int length) throws SAXException {
                 if (author){
@@ -33,7 +32,7 @@ public class SAX {
 
         SAXParserFactory factory = SAXParserFactory.newInstance();
         SAXParser parser = factory.newSAXParser();
-        final String FILE_NAME = "C:\\Users\\Sozin\\Desktop\\Clone git repository\\Lessons\\src\\XML_JSON\\XMLParserSAX\\SAX.xml";
+        final String FILE_NAME = "C:\\Users\\Sozin\\Desktop\\Clone git repository\\Lessons\\src\\XML_JSON\\XML\\XMLParserSAX\\SAX.xml";
         parser.parse(FILE_NAME,handler);
 
     }

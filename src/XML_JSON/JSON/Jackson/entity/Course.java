@@ -5,6 +5,7 @@ public class Course {
     private String title;
     private String description;
 
+    //Есл есть конструктор с параетрами должен быть и пустой конструктор ибо будет кидать ошибки
     public Course() {
     }
 

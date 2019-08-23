@@ -48,7 +48,7 @@ public class GenericMethods {
     }
 
     //В качестве параметра метода передавать ему будут List<Number>
-    private static void printElement (List<Number> list){
+    private static void printElement (List<? extends Number> list){
         for (Number number : list){
             System.out.println(number);
         }

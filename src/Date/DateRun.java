@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class DateRun {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
         Scanner sc = new Scanner(System.in);
         Date date = new Date();
 
@@ -33,5 +33,17 @@ public class DateRun {
         //Выводим
         System.out.println(text);
         sc.close();
+
+        //Делаем проверку входит ли время в диапазон который мы указываем с клавиатуры
+        SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm");
+
+        Date testDate = dateFormat.parse(sc.nextLine());
+        Date startDate = dateFormat.parse(sc.nextLine());
+        Date endDate = dateFormat.parse(sc.nextLine());
+
+        //Написал так чтобы работало, даже если testDate был точно равен одному из конечных случаев.
+        if (!(testDate.before(startDate) || testDate.after(endDate))) {
+            System.out.println(dateFormat.format(testDate));
+        }
     }
 }

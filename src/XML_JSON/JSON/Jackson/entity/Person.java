@@ -8,6 +8,7 @@ public class Person {
     private Course course;
     private List<String> personalContacts;
 
+    //Есл есть конструктор с параетрами должен быть и пустой конструктор ибо будет кидать ошибки
     public Person() {
     }
 
